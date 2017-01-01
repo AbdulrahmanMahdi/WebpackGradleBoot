@@ -1,0 +1,60 @@
+buildscript {
+   repositories {
+      jcenter()
+   }
+   dependencies {
+      classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.4.3.RELEASE'
+   }
+}
+
+plugins {
+   id 'com.moowork.node' version '1.0.1'
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+node {
+   version='6.9.2'
+   npmVersion='3.10.9'
+   download=true
+}
+
+repositories {
+   jcenter()
+}
+sourceSets {
+   main {
+      java {
+         srcDirs += 'src/main/conf'
+      }
+   }
+}
+configurations {
+   all*.exclude module: 'spring-boot-starter-tomcat'
+}
+dependencies {
+   compile 'org.slf4j:slf4j-api:1.7.21'
+
+   compile 'org.codehaus.groovy:groovy-all:2.4.7'
+
+   compile 'org.springframework.boot:spring-boot-starter'
+   compile 'org.springframework.boot:spring-boot-starter-web'
+   compile 'org.springframework.boot:spring-boot-starter-jetty'
+   compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+   testCompile 'junit:junit:4.12'
+}
+
+task webpack(type: NodeTask, dependsOn: 'npmInstall') {
+   def osName = System.getProperty("os.name").toLowerCase()
+
+   if(osName.contains("windows")) {
+      script = project.file('node_modules/webpack/bin/webpack.js')
+   }
+   else {
+      script = project.file('node_modules/.bin/webpack')
+   }
+}
+
+processResources.dependsOn 'webpack'

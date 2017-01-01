@@ -1,0 +1,19 @@
+{
+  "name": "webpackgradleboot",
+  "version": "0.0.1",
+  "description": "Demo Web application for gradle/webpack/spring boot",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "developerSid",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "babel-preset-stage-1": "^6.1.18"
+  }
+}
