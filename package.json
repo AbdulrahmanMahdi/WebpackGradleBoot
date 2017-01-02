@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Demo Web application for gradle/webpack/spring boot",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node ./node_modules/webpack/bin/webpack.js ./webpack.config.js"
   },
   "author": "developerSid",
   "license": "BSD-2-Clause",

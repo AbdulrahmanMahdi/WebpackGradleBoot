@@ -39,5 +39,6 @@ if(enabledLoggers.contains('STDOUT'))
 
 logger('org.springframework', ERROR)
 logger('org.apache', ERROR)
+logger('org.eclipse', ERROR)
 
 root(DEBUG, enabledLoggers)

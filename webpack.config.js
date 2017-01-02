@@ -4,7 +4,7 @@ module.exports = {
       './src/main/javascript/index.js'
    ],
    output: {
-      path: __dirname + '/build/resources/',
+      path: __dirname + '/build/resources/main/',
       publicPath: '/',
       filename: 'bundle.js'
    },
@@ -18,6 +18,6 @@ module.exports = {
       }]
    },
    resolve: {
-      extensions: ['', '.js', '.jsx']
+      extensions: ['.js']
    }
 };
