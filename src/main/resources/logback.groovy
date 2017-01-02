@@ -40,5 +40,8 @@ if(enabledLoggers.contains('STDOUT'))
 logger('org.springframework', ERROR)
 logger('org.apache', ERROR)
 logger('org.eclipse', ERROR)
+logger('org.hibernate', ERROR)
+logger('org.jboss', ERROR)
+logger('org.thymeleaf', ERROR)
 
 root(DEBUG, enabledLoggers)

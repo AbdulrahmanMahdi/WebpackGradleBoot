@@ -1,10 +1,11 @@
 module.exports = {
    watch: false,
+   devtool: "source-map",
    entry: [
-      './src/main/javascript/index.js'
+      __dirname + '/src/main/javascript/index.js'
    ],
    output: {
-      path: __dirname + '/build/resources/main/',
+      path: __dirname + '/build/resources/main/public/',
       publicPath: '/',
       filename: 'bundle.js'
    },
@@ -18,6 +19,6 @@ module.exports = {
       }]
    },
    resolve: {
-      extensions: ['.js']
+      extensions: ['', '.js']
    }
 };
